@@ -10,7 +10,9 @@ namespace Orion
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            GradeBook gradeBook = new GradeBook();
+            gradeBook.AddGrade(10);
+            gradeBook.AddGrade(10.6f);
         }
     }
 }
