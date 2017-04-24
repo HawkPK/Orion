@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orion
 {
-    class GradeBook
+    public class GradeBook
     {
 
         public GradeBook()

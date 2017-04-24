@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Orion
 {
     [Serializable]
-    internal class ComputeStatistics : Exception
+    public class ComputeStatistics : Exception
     {
         public ComputeStatistics()
         {
