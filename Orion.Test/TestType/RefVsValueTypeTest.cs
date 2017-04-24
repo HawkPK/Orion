@@ -13,14 +13,16 @@ namespace Orion.Test.TestType
     [TestMethod]
         public void DoesItComputeCorrectly()
         {
-            int c1 = 10;
-            int c2 = c1;
+            int c1;
+            int c2 = 10;
+            compute(out c1);
 
             Assert.AreEqual(c1, c2);
+        }
 
-            c1 = 100;
-
-            Assert.AreNotEqual(c1, c2);
+        public void compute(out int c)
+        {
+            c = 10;
         }
     }
 }
