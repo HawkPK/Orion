@@ -11,10 +11,17 @@ namespace Orion
         static void Main(string[] args)
         {
             GradeBook gradeBook = new GradeBook();
-            gradeBook.NameChange += OnNameChanged;
-            gradeBook.NameChange += OnNameChanged;
+
             gradeBook.Name = "Super book";
-            gradeBook.Name = "";
+
+            try {
+                Console.WriteLine("Please write the name of GradeBook");
+                gradeBook.Name = Console.ReadLine();
+            } catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             gradeBook.AddGrade(10);
             gradeBook.AddGrade(10.6f);
 

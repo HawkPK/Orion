@@ -43,17 +43,19 @@ namespace Orion
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (String.IsNullOrEmpty(value))
                 {
+                    throw new ArgumentException("Null value is unexcepted");
+                }
                     if(_name != value)
                     {
                         ChangedNameEventsArgs changeName = new ChangedNameEventsArgs();
                         changeName.existName = _name;
                         changeName.newName = value;
-                        NameChange(this, changeName);
+                        //NameChange(this, changeName);
                     }
                     _name = value;
-                }
+                
             }
         }
 
