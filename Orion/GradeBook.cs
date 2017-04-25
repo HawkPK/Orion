@@ -11,7 +11,7 @@ namespace Orion
 
         public GradeBook()
         {
-
+            _name = "Empty";
         }
 
         public ComputeStatistics ComputeStatistics()
@@ -45,10 +45,19 @@ namespace Orion
             {
                 if (!String.IsNullOrEmpty(value))
                 {
+                    if(_name != value)
+                    {
+                        ChangedNameEventsArgs changeName = new ChangedNameEventsArgs();
+                        changeName.existName = _name;
+                        changeName.newName = value;
+                        NameChange(this, changeName);
+                    }
                     _name = value;
                 }
             }
         }
+
+        public NameDelegate NameChange;
 
         private string _name;
         List<float> grades = new List<float>();

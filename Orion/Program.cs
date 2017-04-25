@@ -11,6 +11,8 @@ namespace Orion
         static void Main(string[] args)
         {
             GradeBook gradeBook = new GradeBook();
+            gradeBook.NameChange += OnNameChanged;
+            gradeBook.NameChange += OnNameChanged;
             gradeBook.Name = "Super book";
             gradeBook.Name = "";
             gradeBook.AddGrade(10);
@@ -22,5 +24,11 @@ namespace Orion
             Console.WriteLine("Min value " + gradeBook.ComputeStatistics().MinGrade);
             Console.WriteLine("Avg value " + gradeBook.ComputeStatistics().AvgGrade);
         }
+
+        static void OnNameChanged(object sender, ChangedNameEventsArgs changedName)
+        {
+            Console.WriteLine($"The name changed from {changedName.existName} to {changedName.newName}");
+        }
+
     }
 }
