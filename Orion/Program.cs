@@ -10,26 +10,42 @@ namespace Orion
     {
         static void Main(string[] args)
         {
-            GradeBook gradeBook = new GradeBook();
+            GradeBook gradeBook = new ThrowGradeBook();
 
-            gradeBook.Name = "Super book";
+            //GetName(gradeBook);
+            AddGrade(gradeBook);
+            ShowResults(gradeBook);
+        }
 
-            try {
+        private static void ShowResults(GradeBook gradeBook)
+        {
+            Console.WriteLine(gradeBook.Name);
+            ComputeStatistics statics = gradeBook.ComputeStatistics();
+            Console.WriteLine("Max value " + statics.MaxGrade);
+            Console.WriteLine("Min value " + statics.MinGrade);
+            Console.WriteLine("Avg value " + statics.AvgGrade);
+        }
+
+        private static void AddGrade(GradeBook gradeBook)
+        {
+            gradeBook.AddGrade(5);
+            gradeBook.AddGrade(10);
+            gradeBook.AddGrade(30);
+            gradeBook.AddGrade(25);
+            gradeBook.AddGrade(10.6f);
+        }
+
+        private static void GetName(GradeBook gradeBook)
+        {
+            try
+            {
                 Console.WriteLine("Please write the name of GradeBook");
                 gradeBook.Name = Console.ReadLine();
-            } catch (ArgumentException ex)
+            }
+            catch (ArgumentException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
-            gradeBook.AddGrade(10);
-            gradeBook.AddGrade(10.6f);
-
-            gradeBook.ComputeStatistics();
-            Console.WriteLine(gradeBook.Name);
-            Console.WriteLine("Max value " + gradeBook.ComputeStatistics().MaxGrade);
-            Console.WriteLine("Min value " + gradeBook.ComputeStatistics().MinGrade);
-            Console.WriteLine("Avg value " + gradeBook.ComputeStatistics().AvgGrade);
         }
 
         static void OnNameChanged(object sender, ChangedNameEventsArgs changedName)

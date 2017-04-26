@@ -16,6 +16,7 @@ namespace Orion
 
         public ComputeStatistics ComputeStatistics()
         {
+            Console.WriteLine("Compute GradeBook");
             ComputeStatistics statics = new ComputeStatistics();
 
             foreach(float num in grades)
@@ -62,7 +63,7 @@ namespace Orion
         public NameDelegate NameChange;
 
         private string _name;
-        List<float> grades = new List<float>();
+        protected List<float> grades = new List<float>();
         private float sum;
     }
 }
