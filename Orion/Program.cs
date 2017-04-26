@@ -10,14 +10,14 @@ namespace Orion
     {
         static void Main(string[] args)
         {
-            GradeBook gradeBook = new ThrowGradeBook();
+            GraderTrack gradeBook = new ThrowGradeBook();
 
             //GetName(gradeBook);
             AddGrade(gradeBook);
             ShowResults(gradeBook);
         }
 
-        private static void ShowResults(GradeBook gradeBook)
+        private static void ShowResults(GraderTrack gradeBook)
         {
             Console.WriteLine(gradeBook.Name);
             ComputeStatistics statics = gradeBook.ComputeStatistics();
@@ -26,7 +26,7 @@ namespace Orion
             Console.WriteLine("Avg value " + statics.AvgGrade);
         }
 
-        private static void AddGrade(GradeBook gradeBook)
+        private static void AddGrade(GraderTrack gradeBook)
         {
             gradeBook.AddGrade(5);
             gradeBook.AddGrade(10);
@@ -35,7 +35,7 @@ namespace Orion
             gradeBook.AddGrade(10.6f);
         }
 
-        private static void GetName(GradeBook gradeBook)
+        private static void GetName(GraderTrack gradeBook)
         {
             try
             {

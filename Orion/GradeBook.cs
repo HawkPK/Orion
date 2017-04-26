@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orion
 {
-    public class GradeBook
+    public class GradeBook : GraderTrack
     {
 
         public GradeBook()
@@ -14,7 +14,7 @@ namespace Orion
             _name = "Empty";
         }
 
-        public ComputeStatistics ComputeStatistics()
+        public override ComputeStatistics ComputeStatistics()
         {
             Console.WriteLine("Compute GradeBook");
             ComputeStatistics statics = new ComputeStatistics();
@@ -32,37 +32,11 @@ namespace Orion
             return statics;
         }
 
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
             grades.Add(grade);
         }
 
-        public string Name {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Null value is unexcepted");
-                }
-                    if(_name != value)
-                    {
-                        ChangedNameEventsArgs changeName = new ChangedNameEventsArgs();
-                        changeName.existName = _name;
-                        changeName.newName = value;
-                        //NameChange(this, changeName);
-                    }
-                    _name = value;
-                
-            }
-        }
-
-        public NameDelegate NameChange;
-
-        private string _name;
         protected List<float> grades = new List<float>();
         private float sum;
     }

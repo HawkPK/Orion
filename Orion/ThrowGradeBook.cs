@@ -9,7 +9,7 @@ namespace Orion
     public class ThrowGradeBook : GradeBook
     {
 
-        public ComputeStatistics ComputeStatistics()
+        public override ComputeStatistics ComputeStatistics()
         {
             Console.WriteLine("Compute ThrowGradeBook");
 
