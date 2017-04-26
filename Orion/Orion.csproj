@@ -50,6 +50,7 @@
     <Compile Include="ComputeStatistics.cs" />
     <Compile Include="GradeBook.cs" />
     <Compile Include="GraderTrack.cs" />
+    <Compile Include="IGraderTrack.cs" />
     <Compile Include="NameDelegate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

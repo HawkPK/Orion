@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orion
 {
-    public abstract class GraderTrack
+    public abstract class GraderTrack : IGraderTrack
     {
         public abstract ComputeStatistics ComputeStatistics();
         public abstract void AddGrade(float grade);
