@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Orion
     {
         public abstract ComputeStatistics ComputeStatistics();
         public abstract void AddGrade(float grade);
+        public abstract IEnumerator GetEnumerator();
+
 
         public string Name
         {

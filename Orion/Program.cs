@@ -19,6 +19,12 @@ namespace Orion
 
         private static void ShowResults(IGraderTrack gradeBook)
         {
+
+            foreach(float grade in gradeBook)
+            {
+
+            }
+
             Console.WriteLine(gradeBook.Name);
             ComputeStatistics statics = gradeBook.ComputeStatistics();
             Console.WriteLine("Max value " + statics.MaxGrade);
